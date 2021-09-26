@@ -1,7 +1,7 @@
-#War - Card Game
-###Number of Players: 2
-###Objective: The player who collects all the cards from a standard 52 card deck wins.
-###How to play:
+# War - Card Game
+### Number of Players: 2
+### Objective: The player who collects all the cards from a standard 52 card deck wins.
+### How to play:
 The deck is divided evenly, with each player receiving 26 cards, dealt one at a time, face down. Anyone may deal first. Each player places their stack of cards face down, in front of them.
 
 Each player turns up a card at the same time and the player with the higher card takes both cards and puts them, face down, on the bottom of his stack.
