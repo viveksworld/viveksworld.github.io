@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="color-scheme" content="light dark" />
+<meta name="color-scheme" content="dark" />
 <meta name="description" content="Vivek Nagarajan — Azure Cloud Infrastructure, Security, Databricks, AI Engineering at State Street, Austin, TX. Azure cloud since 2021. 21 years in IT." />
 <link rel="icon" href="data:," />
 <title>Vivek Nagarajan — Azure Cloud Infrastructure, Security, Databricks, AI Engineering</title>
@@ -12,21 +12,12 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#ffffff; --bg-soft:#f6f8fa; --bg-card:#ffffff;
-    --ink:#0e1a2b; --ink-2:#334155; --muted:#64748b;
-    --line:#e6ebf0; --line-strong:#dbe3ec;
-    --navy:#0b2a4a; --azure:#0a6ed1; --azure-dark:#084e96; --azure-soft:#eaf3fe;
-    --gold:#b9975b;
+    --bg:#0a111e; --bg-soft:#0f1a2e; --bg-card:#111e33;
+    --ink:#f1f5f9; --ink-2:#cbd5e1; --muted:#94a3b8;
+    --line:#1e344f; --line-strong:#2a4566;
+    --navy:#eaf3fe; --azure:#3b9eff; --azure-dark:#7dbdff; --azure-soft:#132a4a;
+    --gold:#d4b483;
     --radius:14px;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#0a111e; --bg-soft:#0f1a2e; --bg-card:#111e33;
-      --ink:#f1f5f9; --ink-2:#cbd5e1; --muted:#94a3b8;
-      --line:#1e344f; --line-strong:#2a4566;
-      --navy:#eaf3fe; --azure:#3b9eff; --azure-dark:#7dbdff; --azure-soft:#132a4a;
-      --gold:#d4b483;
-    }
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -38,15 +29,13 @@
   header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.02em}
-  .monogram{width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:13px;letter-spacing:.06em;font-weight:700}
-  @media (prefers-color-scheme: dark){ .monogram{background:var(--azure);color:#fff} }
+  .monogram{width:36px;height:36px;border-radius:50%;background:var(--azure);color:#fff;display:grid;place-items:center;font-size:13px;letter-spacing:.06em;font-weight:700}
   .brand small{display:block;font-weight:500;color:var(--muted);font-size:12px;letter-spacing:0;line-height:1}
   nav{display:flex;gap:28px;font-size:14.5px;font-weight:500;color:var(--ink-2)}
   nav a{padding:6px 0;border-bottom:2px solid transparent}
   nav a:hover, nav a.active{color:var(--azure);border-color:var(--azure)}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-weight:600;font-size:14.5px;border:1px solid transparent;cursor:pointer;transition:.15s}
-  .btn-primary{background:var(--navy);color:#fff}
-  @media (prefers-color-scheme: dark){ .btn-primary{background:var(--azure);color:#fff} }
+  .btn-primary{background:var(--azure);color:#fff}
   .btn-primary:hover{opacity:.92;transform:translateY(-1px)}
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
   .btn-ghost:hover{border-color:var(--azure);color:var(--azure)}
@@ -99,8 +88,7 @@
   .work-card:hover{border-color:var(--azure)}
   .work-top{display:flex;justify-content:space-between;align-items:center}
   .work-num{font-family:"DM Serif Display",serif;font-size:22px;color:var(--muted);opacity:.7}
-  .tag{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:var(--azure-soft);color:var(--azure-dark)}
-  @media (prefers-color-scheme: dark){ .tag{color:var(--azure)} }
+  .tag{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:var(--azure-soft);color:var(--azure)}
   .work-card h3{margin:2px 0 0;font-size:19px;line-height:1.25;letter-spacing:-.01em}
   .work-card p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.65;flex:1}
   .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
@@ -235,9 +223,9 @@
     <div class="wrap">
       <div class="sec-head reveal"><div><div class="kicker">Expertise</div><h2>Skills and expertise.</h2></div></div>
       <div class="skills-grid">
-        <div class="skill-col reveal"><h3>Gen AI &amp; Tools</h3><div class="chips"><span>Azure AI Services</span><span>Azure OpenAI</span><span>Microsoft Foundry</span><span>Generative AI</span><span>LangChain</span><span>LangGraph</span><span>AI Infrastructure</span><span>AI Automation</span><span>Databricks MLflow</span><span>Evals</span><span>Observability</span><span>Traceability</span><span>Agent Monitoring</span><span>Foundry Hosted Agents</span><span>ACA Sandbox</span><span>WebIQ</span><span>Agent Tools</span><span>MCP</span><span>AI Gateway</span></div></div>
-        <div class="skill-col reveal"><h3>Cloud, Security &amp; Databricks</h3><div class="chips"><span>Microsoft Azure</span><span>Kubernetes</span><span>Terraform</span><span>Terragrunt</span><span>Cloud Architecture</span><span>Networking</span><span>Security</span><span>HA / DR</span><span>Infrastructure as Code</span><span>Azure Migration</span><span>Telemetry &amp; Monitoring</span><span>Backup &amp; Restore</span><span>FinOps</span><span>Cost Optimization</span><span>Unity Catalog</span><span>Load Balancing</span><span>DNS</span></div></div>
-        <div class="skill-col reveal"><h3>Data &amp; Tools</h3><div class="chips"><span>Snowflake</span><span>Databricks</span><span>Oracle Database</span><span>SQL &amp; PL/SQL</span><span>SQL Performance Tuning</span><span>OLTP &amp; Data Warehouse</span><span>Data Modeling</span><span>Data Vault</span><span>Python</span><span>Java</span><span>Shell Scripting</span><span>Git</span><span>Autosys</span><span>NGINX</span><span>REDIS</span></div></div>
+        <div class="skill-col reveal"><h3>Generative AI</h3><div class="chips"><span>Azure AI Services</span><span>Azure OpenAI</span><span>Microsoft Foundry</span><span>LangChain</span><span>LangGraph</span><span>AI Infrastructure</span><span>AI Automation</span><span>Databricks MLflow</span><span>Evals</span><span>Observability</span><span>Traceability</span><span>Agent Monitoring</span><span>Foundry Hosted Agents</span><span>ACA Sandbox</span><span>WebIQ</span><span>Agent Tools</span><span>MCP</span><span>AI Gateway</span></div></div>
+        <div class="skill-col reveal"><h3>Cloud</h3><div class="chips"><span>Microsoft Azure</span><span>Kubernetes</span><span>Databricks</span><span>Snowflake</span><span>Cloud Architecture</span><span>Networking</span><span>Security</span><span>Identity &amp; Access Management</span><span>RBAC</span><span>HA / DR</span><span>Azure Migration</span><span>Telemetry &amp; Monitoring</span><span>Backup &amp; Restore</span><span>FinOps</span><span>Cost Optimization</span><span>Capacity Planning</span><span>Load Balancing</span><span>DNS</span></div></div>
+        <div class="skill-col reveal"><h3>Data &amp; Tools</h3><div class="chips"><span>Oracle Database</span><span>SQL</span><span>PL/SQL</span><span>SQL Performance Tuning</span><span>OLTP</span><span>Data Warehouse</span><span>Data Modeling</span><span>Python</span><span>Java</span><span>Shell Scripting</span><span>Git</span><span>Autosys</span><span>NGINX</span><span>REDIS</span><span>Ansible</span><span>Azure CLI</span><span>kubectl</span><span>Azure DevOps</span><span>Harness</span><span>Terraform</span><span>Terragrunt</span><span>Infrastructure as Code</span><span>GitHub Copilot</span><span>Databricks Genie</span><span>Unity Catalog</span></div></div>
       </div>
 
       <div style="height:16px"></div>
