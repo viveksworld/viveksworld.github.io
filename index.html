@@ -132,7 +132,7 @@
   .skill-col h3{margin:0 0 4px;font-size:16px;display:flex;justify-content:space-between;align-items:center}
   .skill-col h3 em{font-style:normal;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--azure);color:#fff;padding:4px 7px;border-radius:999px}
   .skill-col p{margin:0 0 16px;color:var(--muted);font-size:13.5px;line-height:1.5}
-  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
   .chips span{background:var(--bg);border:1px solid var(--line);padding:7px 11px;border-radius:999px;font-size:13.5px;font-weight:500}
 
   /* Recognition */
@@ -144,7 +144,7 @@
   .plain-card li{display:flex;justify-content:space-between;gap:16px;font-size:14.5px;border-bottom:1px solid var(--line);padding-bottom:12px}
   .plain-card li:last-child{border:none;padding-bottom:0}
   .plain-card li span{color:var(--muted);text-align:right;flex-shrink:0}
-  @media(min-width:900px){ .rec-grid .plain-card ul{grid-template-columns:1fr 1fr;column-gap:36px} }
+  @media(min-width:900px){ .rec-grid .plain-card ul{grid-template-columns:1fr 1fr;grid-template-rows:repeat(5,auto);grid-auto-flow:column;column-gap:36px} }
   .rec-line{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.7;color:var(--muted)}
   .rec-line strong{color:var(--ink)}
 
