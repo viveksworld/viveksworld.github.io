@@ -125,21 +125,20 @@
   .exp ul li::marker{color:var(--azure)}
 
   /* Skills */
-  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:860px){ .skills-grid{grid-template-columns:1fr} }
-  .skill-col{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:24px}
-  .skill-col.highlight{border-color:var(--azure);background:var(--azure-soft)}
+  .skill-col{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;transition:.15s}
+  .skill-col:hover{border-color:var(--azure)}
   .skill-col h3{margin:0 0 4px;font-size:16px;display:flex;justify-content:space-between;align-items:center}
   .skill-col h3 em{font-style:normal;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--azure);color:#fff;padding:4px 7px;border-radius:999px}
   .skill-col p{margin:0 0 16px;color:var(--muted);font-size:13.5px;line-height:1.5}
-  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
   .chips span{background:var(--bg);border:1px solid var(--line);padding:7px 11px;border-radius:999px;font-size:13.5px;font-weight:500}
-  .skill-col.highlight .chips span{background:var(--bg-card)}
 
   /* Recognition */
-  .rec-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+  .rec-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   @media(max-width:760px){ .rec-grid{grid-template-columns:1fr} }
-  .bounty{border-radius:16px;padding:28px;background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .bounty{border-radius:16px;padding:28px;background:var(--navy);color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
   @media (prefers-color-scheme: dark){ .bounty{background:#132a4a} }
   .bounty .amount{font-family:"DM Serif Display",serif;font-size:52px;line-height:1}
   .bounty h3{margin:10px 0 6px;font-size:19px}
@@ -256,7 +255,7 @@
     <div class="wrap">
       <div class="sec-head reveal"><div><div class="kicker">Expertise</div><h2>Skills and expertise.</h2></div></div>
       <div class="skills-grid">
-        <div class="skill-col highlight reveal"><h3>AI &amp; Automation</h3><div class="chips"><span>Azure AI Services</span><span>Azure OpenAI</span><span>Microsoft Foundry</span><span>Generative AI</span><span>LangChain</span><span>LangGraph</span><span>AI Infrastructure</span><span>AI Automation</span></div></div>
+        <div class="skill-col reveal"><h3>AI &amp; Automation</h3><div class="chips"><span>Azure AI Services</span><span>Azure OpenAI</span><span>Microsoft Foundry</span><span>Generative AI</span><span>LangChain</span><span>LangGraph</span><span>AI Infrastructure</span><span>AI Automation</span></div></div>
         <div class="skill-col reveal"><h3>Cloud, Security &amp; Databricks</h3><div class="chips"><span>Microsoft Azure</span><span>Kubernetes</span><span>Terraform</span><span>Terragrunt</span><span>Cloud Architecture</span><span>Networking</span><span>Security</span><span>HA / DR</span><span>Infrastructure as Code</span><span>Azure Migration</span></div></div>
         <div class="skill-col reveal"><h3>Data &amp; Tools</h3><div class="chips"><span>Snowflake</span><span>Databricks</span><span>Oracle Database</span><span>SQL &amp; PL/SQL</span><span>SQL Performance Tuning</span><span>OLTP &amp; Data Warehouse</span><span>Data Modeling</span><span>Data Vault</span><span>Python</span><span>Java</span><span>Shell Scripting</span><span>Git</span><span>Autosys</span><span>NGINX</span><span>REDIS</span></div></div>
       </div>
