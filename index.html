@@ -1,298 +1,307 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Vivek Nagarajan — Azure Cloud Infrastructure, Security, Databricks, AI Engineering at State Street, Austin, TX. Azure cloud since 2021. 21 years in IT since 2005." />
+<link rel="icon" href="data:," />
+<title>Vivek Nagarajan — Azure Cloud Infrastructure, Security, Databricks, AI Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --bg-soft:#f6f8fa; --bg-card:#ffffff;
+    --ink:#0e1a2b; --ink-2:#334155; --muted:#64748b;
+    --line:#e6ebf0; --line-strong:#dbe3ec;
+    --navy:#0b2a4a; --azure:#0a6ed1; --azure-dark:#084e96; --azure-soft:#eaf3fe;
+    --gold:#b9975b;
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0a111e; --bg-soft:#0f1a2e; --bg-card:#111e33;
+      --ink:#f1f5f9; --ink-2:#cbd5e1; --muted:#94a3b8;
+      --line:#1e344f; --line-strong:#2a4566;
+      --navy:#eaf3fe; --azure:#3b9eff; --azure-dark:#7dbdff; --azure-soft:#132a4a;
+      --gold:#d4b483;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important; transition:none!important} }
+  body{margin:0;font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  /* Header */
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.02em}
+  .monogram{width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:13px;letter-spacing:.06em;font-weight:700}
+  @media (prefers-color-scheme: dark){ .monogram{background:var(--azure);color:#fff} }
+  .brand small{display:block;font-weight:500;color:var(--muted);font-size:12px;letter-spacing:0;line-height:1}
+  nav{display:flex;gap:28px;font-size:14.5px;font-weight:500;color:var(--ink-2)}
+  nav a{padding:6px 0;border-bottom:2px solid transparent}
+  nav a:hover, nav a.active{color:var(--azure);border-color:var(--azure)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-weight:600;font-size:14.5px;border:1px solid transparent;cursor:pointer;transition:.15s}
+  .btn-primary{background:var(--navy);color:#fff}
+  @media (prefers-color-scheme: dark){ .btn-primary{background:var(--azure);color:#fff} }
+  .btn-primary:hover{opacity:.92;transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--azure);color:var(--azure)}
+  .btn-sm{padding:8px 16px;font-size:13.5px}
+  @media(max-width:720px){ nav{display:none} }
 
-    <title>Vivek Nagarajan</title>
+  /* Hero */
+  .hero{padding:72px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:1.55fr .85fr;gap:48px;align-items:start}
+  @media(max-width:860px){ .hero-grid{grid-template-columns:1fr} .hero{padding:44px 0 36px} }
+  .location{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--azure)}
+  .location::before{content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;display:inline-block}
+  h1{font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:clamp(48px,7vw,76px);line-height:.95;letter-spacing:-.02em;margin:16px 0 14px;color:var(--ink)}
+  h1 em{font-style:italic;color:var(--azure)}
+  .role{font-size:clamp(18px,2.4vw,23px);font-weight:600;line-height:1.3;color:var(--ink);max-width:620px}
+  .role span{color:var(--muted);font-weight:500}
+  .hero p.lede{margin:18px 0 0;color:var(--ink-2);font-size:17px;line-height:1.7;max-width:600px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:0}
+  .stat{background:var(--bg-card);padding:20px 18px}
+  .stat b{display:block;font-family:"DM Serif Display",serif;font-size:30px;line-height:1;font-weight:400;color:var(--ink)}
+  .stat b i{font-style:normal;color:var(--azure)}
+  .stat span{display:block;margin-top:6px;font-size:13px;line-height:1.4;color:var(--muted);font-weight:500}
+  .stat.wide{grid-column:1/-1;background:var(--azure-soft)}
+  .hero-card{border:1px solid var(--line);border-radius:18px;padding:22px;background:var(--bg-card)}
+  .hero-card h3{margin:0 0 4px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .hero-card .now{font-weight:700;font-size:17px;line-height:1.35}
+  .hero-card .now-sub{color:var(--muted);font-size:14px;margin-top:2px}
+  .focus-list{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:grid;gap:10px}
+  .focus-list li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-2);align-items:flex-start}
+  .focus-list li::before{content:"→";color:var(--azure);font-weight:700;flex-shrink:0}
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/unicons.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  /* Marquee strip */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;overflow:hidden;white-space:nowrap}
+  .strip-inner{display:inline-flex;gap:0;animation:scroll 28s linear infinite}
+  .strip span{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:0 22px}
+  .strip span::after{content:"·";margin-left:44px;color:var(--line-strong)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){ .strip-inner{animation:none} }
 
-    <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="css/tooplate-style.css">
-    
+  section{padding:64px 0}
+  section.soft{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px}
+  .sec-head h2{font-family:"DM Serif Display",serif;font-weight:400;font-size:36px;line-height:1.05;margin:6px 0 0;letter-spacing:-.01em}
+  .kicker{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--azure)}
+  .sec-head p{color:var(--muted);max-width:420px;margin:0;font-size:15px;line-height:1.6}
+  @media(max-width:700px){ .sec-head{flex-direction:column;align-items:flex-start} section{padding:44px 0} }
 
-  </head>
-  <body>
 
-    <!-- MENU -->
-    <nav class="navbar navbar-expand-sm navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="https://www.linkedin.com/in/vivek-nagarajan-92801236/" target="_blank"><i class='uil uil-user'></i> Vivek Nagarajan</a>
+  /* Work */
+  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){ .work-grid{grid-template-columns:1fr} }
+  .work-card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:10px}
+  .work-card:hover{border-color:var(--azure)}
+  .work-top{display:flex;justify-content:space-between;align-items:center}
+  .work-num{font-family:"DM Serif Display",serif;font-size:22px;color:var(--muted);opacity:.7}
+  .tag{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:var(--azure-soft);color:var(--azure-dark)}
+  @media (prefers-color-scheme: dark){ .tag{color:var(--azure)} }
+  .tag.ai{background:#fef3c7;color:#92400e}
+  @media (prefers-color-scheme: dark){ .tag.ai{background:#3a2f10;color:#fcd34d} }
+  .work-card h3{margin:2px 0 0;font-size:19px;line-height:1.25;letter-spacing:-.01em}
+  .work-card p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.65;flex:1}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .stack span{font-size:12.5px;font-weight:500;border:1px solid var(--line);padding:4px 8px;border-radius:999px;color:var(--ink-2);background:var(--bg)}
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  /* Experience */
+  .exp-list{border-top:1px solid var(--line)}
+  .exp{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:28px 0;border-bottom:1px solid var(--line)}
+  @media(max-width:700px){ .exp{grid-template-columns:1fr;gap:8px} }
+  .exp-date{font-size:13.5px;font-weight:600;color:var(--muted);letter-spacing:.02em;padding-top:3px}
+  .exp-date strong{display:block;color:var(--ink);font-size:14px}
+  .exp h3{margin:0;font-size:18px}
+  .exp h3 span{color:var(--muted);font-weight:500}
+  .exp ul{margin:10px 0 0;padding-left:18px;color:var(--ink-2);font-size:15px;line-height:1.7}
+  .exp ul li::marker{color:var(--azure)}
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
-                    </li>
-                </ul>
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:860px){ .skills-grid{grid-template-columns:1fr} }
+  .skill-col{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .skill-col.highlight{border-color:var(--azure);background:var(--azure-soft)}
+  .skill-col h3{margin:0 0 4px;font-size:16px;display:flex;justify-content:space-between;align-items:center}
+  .skill-col h3 em{font-style:normal;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--azure);color:#fff;padding:4px 7px;border-radius:999px}
+  .skill-col p{margin:0 0 16px;color:var(--muted);font-size:13.5px;line-height:1.5}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chips span{background:var(--bg);border:1px solid var(--line);padding:7px 11px;border-radius:999px;font-size:13.5px;font-weight:500}
+  .skill-col.highlight .chips span{background:var(--bg-card)}
 
-                <ul class="navbar-nav ml-lg-auto">
-                    <div class="ml-lg-4">
-                      <div class="color-mode d-lg-flex justify-content-center align-items-center">
-                        <i class="color-mode-icon"></i>
-                        Color mode
-                      </div>
-                    </div>
-                </ul>
-            </div>
-        </div>
+  /* Recognition */
+  .rec-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+  @media(max-width:760px){ .rec-grid{grid-template-columns:1fr} }
+  .bounty{border-radius:16px;padding:28px;background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  @media (prefers-color-scheme: dark){ .bounty{background:#132a4a} }
+  .bounty .amount{font-family:"DM Serif Display",serif;font-size:52px;line-height:1}
+  .bounty h3{margin:10px 0 6px;font-size:19px}
+  .bounty p{margin:0;color:rgba(255,255,255,.78);font-size:14.5px;line-height:1.65;max-width:440px}
+  .plain-card{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--bg-card)}
+  .plain-card h3{margin:0 0 14px;font-size:15px}
+  .plain-card ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .plain-card li{display:flex;justify-content:space-between;gap:16px;font-size:14.5px;border-bottom:1px solid var(--line);padding-bottom:12px}
+  .plain-card li:last-child{border:none;padding-bottom:0}
+  .plain-card li span{color:var(--muted);text-align:right;flex-shrink:0}
+
+  /* Contact */
+  .contact-box{border:1px solid var(--line);border-radius:20px;padding:36px;display:grid;grid-template-columns:1.3fr .7fr;gap:32px;align-items:center;background:var(--bg-card)}
+  @media(max-width:760px){ .contact-box{grid-template-columns:1fr;padding:26px} }
+  .contact-box h2{font-family:"DM Serif Display",serif;font-weight:400;font-size:34px;margin:0 0 10px;line-height:1.1}
+  .contact-box p{margin:0;color:var(--muted);line-height:1.65}
+  .contact-links{display:grid;gap:10px}
+  .contact-links a{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-weight:600;font-size:14.5px}
+  .contact-links a:hover{border-color:var(--azure);color:var(--azure)}
+  footer{padding:28px 0 36px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .reveal{opacity:1;transform:none}
+  .reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a href="#top" class="brand"><span class="monogram">VN</span><span>Vivek Nagarajan<small>Austin, Texas</small></span></a>
+    <nav id="mainNav">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <a class="btn btn-primary btn-sm" href="#contact">Get in touch</a>
+  </div>
+</header>
 
-    <!-- ABOUT -->
-    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-                    <div class="about-text">
-
-                        <h1 class="animated animated-text">
-                          <span class="mr-2">Vivek Nagarajan</a>
-
-                              <a href="Vivek Resume.pdf" class="btn mr-lg-2 custom-btn" target="_blank"><i class='uil uil-file-alt'></i> Download Resume</a>
-
-                          </span>
-                            <br>
-                        </h1>
-
-                        <p>
-                          <b>Azure Cloud Infrastructure and Security Consultant</b>
-                        </p>                                                                                     
-
-                        <p style="text-align:justify">Strategic and results-driven Information Technology Consultant with a stellar track record spanning over 18
-                          years, showcasing expertise in developing cutting-edge applications for both public cloud and on-premises
-                          environments. As a certified specialist in Azure Cloud technologies, I am currently at the forefront of
-                          transformative technology modernization projects.
-                        </p>
-                        <p style="text-align:justify">
-                          My primary focus centers on crafting robust cloud infrastructure with an unwavering commitment to Cost,
-                          Security, High Availability, and Disaster Recovery, meticulously adhering to the foundational pillars of the
-                          well-architected framework.
-                        </p>
-                        <p style="text-align:justify">
-                          In my current role as an Azure Cloud Infrastructure and Security Consultant, I orchestrate seamless
-                          collaboration among diverse cross-functional teams. This includes key stakeholders like Azure Solutions
-                          Architects from Microsoft, the Office of Architecture, Azure Center of Excellence, as well as teams in
-                          Networking, Security, Database Administration, and Site Reliability Engineering. Together, we diligently
-                          develop and maintain tailored applications for Azure, ensuring a flawless migration journey for onpremises
-                          applications.
-                        </p>      
-                        <p style="text-align:justify">
-                          Beyond my mastery in Azure Cloud technologies, my expertise extends into the Banking domain. I have
-                          successfully architected and delivered sophisticated backend applications for data-intensive OLTP & Data
-                          Warehouse systems. My skill set encompasses a spectrum of capabilities, including Application & Data
-                          Architecture, Oracle Database technology, Snowflake cloud, Infrastructure automation using Terraform &
-                          Terragrunt, and proficiency in various supporting tools, technologies, and programming languages.
-                        </p>      
-                        <p style="text-align:justify">
-                          My leadership acumen shines through in successful project and people management. Steering diverse teams
-                          across geographical boundaries, I've effectively navigated through all phases of application development in
-                          both Agile and Waterfall models.
-                        </p>       
-                        <p style="text-align:justify">
-                          Recognized as a highly approachable and trusted figure in the workplace, I bring a sense of strong
-                          ownership and a demonstrated ability to contribute at any organizational level. Adept at oral and written
-                          communication, I thrive in cross-functional team environments. My commitment to continuous learning is
-                          a hallmark, evident in my rapid adaptation to new technologies, reflecting a relentless pursuit of knowledge
-                          and agility.
-                        </p>     
-                        <p style="text-align:justify">
-                          My unique fusion of technical prowess, leadership finesse, and a collaborative spirit positions me as an
-                          invaluable asset, poised to spearhead and drive transformative technology initiatives for your organization.
-                        </p>                                                                                                                
-                    </div>
-                </div>
-            </div>
+<main id="top">
+  <!-- HERO -->
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div>
+        <div class="location">Austin, TX — Azure Cloud since 2021</div>
+        <h1>Vivek<br>Nagarajan<em>.</em></h1>
+        <p class="role">Azure Cloud Infrastructure, Security, Databricks &amp; AI Engineering <span>— Azure Cloud Infrastructure Consultant at State Street, Austin, TX.</span></p>
+        <p class="lede">I am Vivek Nagarajan, Systems Consultant and Vice President at State Street in Austin, Texas, with 21 years of experience in IT. I lead Azure cloud infrastructure, security, Databricks and AI services — designing high availability and disaster recovery (HA &amp; DR) for large data platforms, and delivering AI-powered workflows for infrastructure management. My background is in Oracle and building backend systems, and I have rich consulting experience with TCS, Satyam and Cognizant. I love learning and adopting new technologies, and I am constantly learning — able to learn, unlearn and relearn quickly.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">View selected work ↓</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/vivek-nagarajan-92801236/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn btn-ghost" href="Vivek Resume.pdf" target="_blank" rel="noopener">Download Résumé ↓</a>
+          <a class="btn btn-ghost" href="#experience">Experience</a>
         </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-12">
-                  <h2 class="mb-4">Experiences</h2>
-                    <div class="timeline">
-                        <div class="timeline-wrapper">
-                             <div class="timeline-yr">
-                                  <span>2018*</span>
-                             </div>
-                             <div class="timeline-info">
-                                  <h3><span>Systems Consultant /<br>Vice President<small>@ State Street Bank & Trust Company</small></span></h3>                                  
-                             </div>
-                        </div>
-
-                        <div class="timeline-wrapper">
-                          <div class="timeline-yr">
-                               <span>2010</span>
-                          </div>
-                          <div class="timeline-info">
-                               <h3><span>Consulting Manager <small>@ Cognizant Technology Solutions</small></span></h3>
-                          </div>                        
-                        </div>     
-
-                        <div class="timeline-wrapper">
-                          <div class="timeline-yr">
-                               <span>2008</span>
-                          </div>
-                          <div class="timeline-info">
-                               <h3><span>Software Engineer <small>@ Mahindra Satyam / Satyam Computer Services Ltd</small></span></h3>
-                          </div>                        
-                        </div>                            
-                        <div class="timeline-wrapper">
-                          <div class="timeline-yr">
-                               <span>2005</span>
-                          </div>
-                          <div class="timeline-info">
-                               <h3><span>Assistant Systems Engineer <small>@ Tata Consultancy Services</small></span></h3>
-                          </div>                        
-                        </div>                                              
-                    </div>
-                    <h2 class="mb-4 mobile-mt-2 ">Skills</h2>
-                              <span >
-
-                                  <ul style="list-style:circle;font-size:20px;color: #5b5b5b;">
-                                    <li>Azure</li> 
-                                    <li>Databricks</li> 
-                                    <li>Terraform</li> 
-                                    <li>Snowflake</li>
-                                    <li>Python</li>
-                                    <li>Application & Data Architecture</li>
-                                    <li>Oracle Database - SQL & PL/SQL Programming</li>
-                                    <li>Oracle SQL Performance Tuning</li>                                    
-                                    <li>OLTP & Data Warehouse</li>
-                                    <li>Web Service</li>
-                                    <li>Shell Scripting</li>
-                                    <li>Java</li>
-                                    <li>GIT Version Control</li>
-                                    <li>Autosys Scheduling</li>
-                                  </ul>       
-
-                                </span>                    
-                </div>
-
-
-                <div class="col-lg-6 col-12">
-                  <h2 class="mb-4 mobile-mt-2">Education</h2>
-
-                    <div class="timeline">
-                        <div class="timeline-wrapper">
-                             <div class="timeline-yr">
-                                  <span>2005</span>
-                             </div>
-                             <div class="timeline-info">
-                                  <h3><span>Bachelor of Technology in Information Technology</span><small>@ Anna University, India</small></h3>
-                             </div>
-                        </div>
-
-                    </div>
-
-                    <h2 class="mb-4 mobile-mt-2">Certifications</h2>
-
-                          <div class="timeline">
-                            <div class="timeline-wrapper">
-                              <div class="timeline-yr">
-                                  <span>2023</span>
-                              </div>
-                              <div class="timeline-info">
-                                  <h3><span>Microsoft Certified: Azure Network Engineer Associate</span><small> @ Microsoft</small></h3>                           
-                              </div>
-                        </div>                      
-                        <div class="timeline-wrapper">
-                             <div class="timeline-yr">
-                                  <span>2021</span>
-                             </div>
-                             <div class="timeline-info">
-                                  <h3><span>Hashicorp Certified Terraform Associate</span><small> @ Hashicorp</small></h3>
-                                  <h3><span>Microsoft Certified: Azure Fundamentals</span><small> @ Microsoft</small></h3>
-                                  <h3><span>Snowflake SnowPro Core</span><small> @ Snowflake</small></h3>                               
-                             </div>
-                        </div>
-                        <div class="timeline-wrapper">
-                          <div class="timeline-yr">
-                               <span>2019</span>
-                          </div>
-                          <div class="timeline-info">
-                               <h3><span>AWS Certified Solutions Architect - Associate</span><small> @ Amazon Web Services (AWS)</small></h3>
-                          </div>
-                     </div>
-                     <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                            <span>2014</span>
-                        </div>
-                        <div class="timeline-info">
-                            <h3><span>Oracle Certified Associate PL/SQL Developer</span><small> @ Oracle</small></h3>
-                        </div>
-                     </div>                     
-                     <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                            <span>2013</span>
-                        </div>
-                        <div class="timeline-info">
-                            <h3><span>Oracle Certified Expert - SQL</span><small> @ Oracle</small></h3>
-                        </div>
-                     </div>                                          
-                    </div>
-
-                </div>
- 
-                
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact py-5" id="contact">
-      <div class="container">
-        <div  class="row"><h2>Contact </h2><br><br><br></div>
-        <div class="row">
-          
-
-
-            <div class="contact-info  align-items-start py-4 px-lg-5" >
-                <div class="contact-info-item" >
-                  <!-- <p>Mobile: 1-813-454-3759  </p>
-                  <p><a href="mailto:nvivek.careers@gmail.com">Email: nvivek.careers@gmail.com</a>  </p> -->
-                  <p><a href="https://www.linkedin.com/in/vivek-nagarajan-92801236/">Linked In: Vivek Nagarajan</a></p>
-                  <p>Location: Austin, TX, 78727, USA</a></p>
-                </div>
-
-            </div>
-          <!--</div>-->
-
+        <div style="height:28px"></div>
+        <div class="stats">
+          <div class="stat"><b>21<i>+</i></b><span>Years of<br>experience</span></div>
+          <div class="stat"><b>2018<i>—</i></b><span>At State Street<br>Systems Consultant / VP</span></div>
+          <div class="stat wide"><b>$10,000</b><span>Microsoft security bounty — for discovering an important-severity vulnerability</span></div>
         </div>
       </div>
-    </section>
 
+      <aside class="hero-card">
+        <h3>Currently</h3>
+        <div class="now">Azure Cloud Infrastructure<br>Consultant at State Street</div>
+        <div class="now-sub">Focused on Azure cloud since 2021. I manage Azure infrastructure for multiple applications, including the AI infrastructure behind them.</div>
+        <ul class="focus-list">
+          <li>AI-powered workflows for infrastructure management — using Azure AI services, including Azure OpenAI and Microsoft Foundry</li>
+          <li>AI-powered automation with LangChain &amp; LangGraph</li>
+          <li>Managing Azure services, Kubernetes, Databricks and Snowflake</li>
+        </ul>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);line-height:1.6">
+          I work with Microsoft and with State Street teams in architecture, networking, security, databases and support.
+        </div>
+      </aside>
+    </div>
+  </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Headroom.js"></script>
-    <script src="js/jQuery.headroom.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
+  <div class="strip" aria-hidden="true"><div class="strip-inner" id="stripInner">
+    <span>Azure</span><span>Generative AI</span><span>LangChain</span><span>LangGraph</span><span>Kubernetes</span><span>Azure OpenAI</span><span>Microsoft Foundry</span><span>Databricks</span><span>Snowflake</span>
+    <span>Azure</span><span>Generative AI</span><span>LangChain</span><span>LangGraph</span><span>Cloud Security</span><span>High Availability</span><span>Disaster Recovery</span><span>Banking Infrastructure</span>
+  </div></div>
 
-  </body>
+  <!-- WORK -->
+  <section id="work" class="soft">
+    <div class="wrap">
+      <div class="sec-head reveal"><div><div class="kicker">Selected Work</div><h2>Recent<br>work.</h2></div></div>
+      <div class="work-grid">
+        <article class="work-card reveal"><div class="work-top"><span class="work-num">01</span><span class="tag ai">AI</span></div><h3>AI Work</h3><p>AI-powered workflows for infrastructure management across multiple applications — built with Azure AI services, including Azure OpenAI and Microsoft Foundry, and automation using LangChain and LangGraph.</p><div class="stack"><span>Azure AI Services</span><span>Azure OpenAI</span><span>Microsoft Foundry</span><span>LangChain</span><span>LangGraph</span><span>Generative AI</span></div></article>
+        <article class="work-card reveal"><div class="work-top"><span class="work-num">02</span><span class="tag">Azure</span></div><h3>Azure Infrastructure at State Street</h3><p>Leading Azure infrastructure at State Street — managing multiple Azure services, including Kubernetes, Databricks, Snowflake, Azure OpenAI and Microsoft Foundry, for banking platforms.</p><div class="stack"><span>Azure</span><span>Kubernetes</span><span>Databricks</span><span>Snowflake</span><span>Azure OpenAI</span></div></article>
+        <article class="work-card reveal"><div class="work-top"><span class="work-num">03</span><span class="tag">Platform</span></div><h3>Cloud Resiliency for a Large-Scale Data Platform</h3><p>Designed the plan for how a large data platform hosted in Azure stays running and recovers after a failure, and led disaster recovery exercises with the support teams.</p><div class="stack"><span>Azure</span><span>Cloud Resiliency</span><span>Data Platform</span></div></article>
+        <article class="work-card reveal"><div class="work-top"><span class="work-num">04</span><span class="tag">Databricks</span></div><h3>Infrastructure Setup for Databricks</h3><p>Defined the Databricks platform on Azure.</p><div class="stack"><span>Databricks</span><span>Azure</span><span>Data Platform</span></div></article>
+        <article class="work-card reveal"><div class="work-top"><span class="work-num">05</span><span class="tag">Team</span></div><h3>Training My Team on Cloud &amp; AI Skills</h3><p>Trained my team on Cloud and AI skills, so the work is shared knowledge, not just one person.</p><div class="stack"><span>Cloud</span><span>AI</span><span>Team Training</span></div></article>
+      </div>
+      <p style="color:var(--muted);font-size:14px;margin:20px 0 0">Earlier work, from the résumé: Calculation Engine and Data Warehouse — older work, details in the linked résumé.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head reveal"><div><div class="kicker">Experience</div><h2>Professional<br>experience.</h2></div></div>
+      <div class="exp-list reveal">
+        <div class="exp"><div class="exp-date"><strong>Jan 2018 — Present</strong>Austin, TX</div><div><h3>Systems Consultant / VP <span>— State Street Bank &amp; Trust Company</span></h3><ul><li>Azure Cloud Infrastructure Consultant — managing multiple Azure services, including Kubernetes, Databricks, Snowflake, Azure OpenAI and Microsoft Foundry. Focused on Azure cloud since 2021.</li><li>Designed the plan for how a large data platform stays running and recovers after a failure, and defined the Databricks platform on Azure. Trained my team on Cloud &amp; AI skills.</li><li>AI engineering: AI-powered workflows for infrastructure management across multiple applications, using Azure AI services, Azure OpenAI and Microsoft Foundry, and automation with LangChain &amp; LangGraph</li></ul></div></div>
+        <div class="exp"><div class="exp-date"><strong>Apr 2010 — Jan 2018</strong></div><div><h3>Consulting Manager <span>— Cognizant Technology Solutions</span></h3></div></div>
+        <div class="exp"><div class="exp-date"><strong>Jun 2007 — Apr 2010</strong></div><div><h3>Software Engineer <span>— Mahindra Satyam / Satyam Computer Services Ltd</span></h3></div></div>
+        <div class="exp"><div class="exp-date"><strong>Oct 2005 — May 2007</strong></div><div><h3>Assistant Systems Engineer <span>— Tata Consultancy Services</span></h3></div></div>
+        <div class="exp"><div class="exp-date"><strong>2005</strong>India</div><div><h3>Bachelor of Technology, Information Technology <span>— Anna University</span></h3><ul><li>Graduated 2005, the same year I started in IT.</li></ul></div></div>
+      </div>
+    </div>
+</section>
+
+  <!-- EXPERTISE -->
+  <section id="expertise" class="soft">
+    <div class="wrap">
+      <div class="sec-head reveal"><div><div class="kicker">Expertise</div><h2>Skills and<br>expertise.</h2></div></div>
+      <div class="skills-grid">
+        <div class="skill-col highlight reveal"><h3>AI &amp; Automation</h3><div class="chips"><span>Azure AI Services</span><span>Azure OpenAI</span><span>Microsoft Foundry</span><span>Generative AI</span><span>LangChain</span><span>LangGraph</span><span>AI Infrastructure</span><span>AI Automation</span></div></div>
+        <div class="skill-col reveal"><h3>Cloud, Security &amp; Databricks</h3><div class="chips"><span>Microsoft Azure</span><span>Kubernetes</span><span>Terraform</span><span>Terragrunt</span><span>Cloud Architecture</span><span>Networking</span><span>Security</span><span>HA / DR</span><span>Infrastructure as Code</span><span>Azure Migration</span></div></div>
+        <div class="skill-col reveal"><h3>Data &amp; Tools</h3><div class="chips"><span>Snowflake</span><span>Databricks</span><span>Oracle Database</span><span>SQL &amp; PL/SQL</span><span>SQL Performance Tuning</span><span>OLTP &amp; Data Warehouse</span><span>Data Modeling</span><span>Data Vault</span><span>Python</span><span>Java</span><span>Shell Scripting</span><span>Git</span><span>Autosys</span><span>NGINX</span><span>REDIS</span></div></div>
+      </div>
+
+      <div style="height:16px"></div>
+      <div class="rec-grid">
+        <div class="bounty reveal"><div class="amount">$10,000</div><h3>Microsoft Security Bounty</h3><p>Awarded for discovering and reporting an important-severity vulnerability, acknowledged by Microsoft. Also: Unsung Hero Award (State Street), Business Enabler Award (Cognizant), Pat On Back Award (Mahindra Satyam), Certificate of Recognition (McGraw-Hill).</p></div>
+        <div class="plain-card reveal"><h3>Education &amp; Certifications</h3><ul><li>B.Tech, IT — Anna University <span>2005</span></li><li>Databricks Certified Databricks Engineer Associate <span>Jun 2024</span></li><li>Microsoft Certified: Azure Network Engineer Associate <span>Dec 2023</span></li><li>Microsoft Certified: Azure Fundamentals <span>Jul 2021</span></li><li>SnowPro Core Certification <span>Mar 2021</span></li><li>HashiCorp Certified: Terraform Associate <span>Jan 2021</span></li><li>AWS Certified Solutions Architect – Associate <span>Dec 2019</span></li><li>Oracle Certified Associate PL/SQL Developer <span>Dec 2014</span></li><li>Oracle Certified Expert – SQL <span>Dec 2013</span></li></ul><p style="margin:14px 0 0;color:var(--muted);font-size:13.5px;line-height:1.6">Some certifications have expired since issue — Databricks (Jun 2026), Terraform (Dec 2023), SnowPro Core (Mar 2023), AWS (Dec 2022). Full details are in the résumé PDF and on LinkedIn.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box reveal">
+        <div><h2>Get in<br>touch.</h2><p>If you are working on Azure, Databricks, or AI, I would be glad to talk.</p></div>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/vivek-nagarajan-92801236/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+          <a href="Vivek Resume.pdf" target="_blank" rel="noopener">Download Résumé <span>↓</span></a>
+          <a href="#top">Austin, TX — 78727 <span>◉</span></a>
+        </div>
+      </div>
+      <p style="text-align:center;color:var(--muted);font-size:13px;margin:18px 0 0">Résumé: <a href="Vivek Resume.pdf" target="_blank" rel="noopener" style="text-decoration:underline">Vivek Resume.pdf</a> · LinkedIn: Vivek Nagarajan · Austin, TX 78727</p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap footer-inner"><span>© 2026 Vivek Nagarajan — Azure Cloud Infrastructure, Security, Databricks, AI Engineering</span><span>Last updated 5 November 2026 · viveknagarajan.com</span></div></footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} }); },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // Active nav
+  const sections = ['work','experience','expertise','contact'];
+  const navLinks = document.querySelectorAll('#mainNav a');
+  const onScroll=()=>{
+    let current='';
+    sections.forEach(id=>{ const el=document.getElementById(id); if(el && el.getBoundingClientRect().top<=120) current=id; });
+    navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+current));
+  };
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+</script>
+</body>
 </html>
