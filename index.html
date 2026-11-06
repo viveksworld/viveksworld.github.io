@@ -33,7 +33,7 @@
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important; transition:none!important} }
   body{margin:0;font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
   /* Header */
   header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
@@ -55,23 +55,23 @@
 
   /* Hero */
   .hero{padding:72px 0 56px}
-  .hero-grid{display:grid;grid-template-columns:1.55fr .85fr;gap:48px;align-items:start}
+  .hero-grid{display:grid;grid-template-columns:1.55fr .85fr;gap:48px;align-items:stretch}
   @media(max-width:860px){ .hero-grid{grid-template-columns:1fr} .hero{padding:44px 0 36px} }
   .location{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--azure)}
   .location::before{content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;display:inline-block}
   h1{font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:clamp(48px,7vw,76px);line-height:.95;letter-spacing:-.02em;margin:16px 0 14px;color:var(--ink)}
   h1 em{font-style:italic;color:var(--azure)}
   .role{font-size:clamp(18px,2.4vw,23px);font-weight:600;line-height:1.3;color:var(--ink);max-width:620px}
-  .role span{color:var(--muted);font-weight:500}
+  .role span{color:var(--ink);font-weight:600}
   .hero p.lede{margin:18px 0 0;color:var(--ink-2);font-size:17px;line-height:1.7;max-width:600px}
   .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-  .stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:0}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:32px}
   .stat{background:var(--bg-card);padding:20px 18px}
   .stat b{display:block;font-family:"DM Serif Display",serif;font-size:30px;line-height:1;font-weight:400;color:var(--ink)}
   .stat b i{font-style:normal;color:var(--azure)}
   .stat span{display:block;margin-top:6px;font-size:13px;line-height:1.4;color:var(--muted);font-weight:500}
-  .stat.wide{grid-column:1/-1;background:var(--azure-soft)}
-  .hero-card{border:1px solid var(--line);border-radius:18px;padding:22px;background:var(--bg-card)}
+  .stat.wide{background:var(--bg-card)}
+  .hero-card{border:1px solid var(--line);border-radius:18px;padding:22px;background:var(--bg-card);height:100%}
   .hero-card h3{margin:0 0 4px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
   .hero-card .now{font-weight:700;font-size:17px;line-height:1.35}
   .hero-card .now-sub{color:var(--muted);font-size:14px;margin-top:2px}
@@ -80,24 +80,25 @@
   .focus-list li::before{content:"→";color:var(--azure);font-weight:700;flex-shrink:0}
 
   /* Marquee strip */
-  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;overflow:hidden;white-space:nowrap}
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
   .strip-inner{display:inline-flex;gap:0;animation:scroll 28s linear infinite}
   .strip span{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:0 22px}
   .strip span::after{content:"·";margin-left:44px;color:var(--line-strong)}
   @keyframes scroll{to{transform:translateX(-50%)}}
   @media (prefers-reduced-motion: reduce){ .strip-inner{animation:none} }
 
-  section{padding:64px 0}
+  section{padding:56px 0}
   section.soft{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px}
-  .sec-head h2{font-family:"DM Serif Display",serif;font-weight:400;font-size:36px;line-height:1.05;margin:6px 0 0;letter-spacing:-.01em}
+  .sec-head h2{font-family:"DM Serif Display",serif;font-weight:400;font-size:36px;line-height:1.05;margin:6px 0 0;letter-spacing:-.01em;white-space:nowrap}
   .kicker{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--azure)}
   .sec-head p{color:var(--muted);max-width:420px;margin:0;font-size:15px;line-height:1.6}
-  @media(max-width:700px){ .sec-head{flex-direction:column;align-items:flex-start} section{padding:44px 0} }
+  @media(max-width:700px){ .sec-head{flex-direction:column;align-items:flex-start} .sec-head h2{white-space:normal} section{padding:44px 0} }
 
 
   /* Work */
   .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .work-grid .work-card:last-child{grid-column:1/-1}
   @media(max-width:760px){ .work-grid{grid-template-columns:1fr} }
   .work-card{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:10px}
   .work-card:hover{border-color:var(--azure)}
@@ -109,7 +110,7 @@
   @media (prefers-color-scheme: dark){ .tag.ai{background:#3a2f10;color:#fcd34d} }
   .work-card h3{margin:2px 0 0;font-size:19px;line-height:1.25;letter-spacing:-.01em}
   .work-card p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.65;flex:1}
-  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
   .stack span{font-size:12.5px;font-weight:500;border:1px solid var(--line);padding:4px 8px;border-radius:999px;color:var(--ink-2);background:var(--bg)}
 
   /* Experience */
@@ -120,11 +121,11 @@
   .exp-date strong{display:block;color:var(--ink);font-size:14px}
   .exp h3{margin:0;font-size:18px}
   .exp h3 span{color:var(--muted);font-weight:500}
-  .exp ul{margin:10px 0 0;padding-left:18px;color:var(--ink-2);font-size:15px;line-height:1.7}
+  .exp ul{margin:10px 0 0;padding-left:0;list-style-position:inside;color:var(--ink-2);font-size:15px;line-height:1.7}
   .exp ul li::marker{color:var(--azure)}
 
   /* Skills */
-  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
   @media(max-width:860px){ .skills-grid{grid-template-columns:1fr} }
   .skill-col{background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:24px}
   .skill-col.highlight{border-color:var(--azure);background:var(--azure-soft)}
@@ -136,7 +137,7 @@
   .skill-col.highlight .chips span{background:var(--bg-card)}
 
   /* Recognition */
-  .rec-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+  .rec-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
   @media(max-width:760px){ .rec-grid{grid-template-columns:1fr} }
   .bounty{border-radius:16px;padding:28px;background:var(--navy);color:#fff;position:relative;overflow:hidden}
   @media (prefers-color-scheme: dark){ .bounty{background:#132a4a} }
@@ -193,12 +194,6 @@
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/vivek-nagarajan-92801236/" target="_blank" rel="noopener">LinkedIn ↗</a>
           <a class="btn btn-ghost" href="#experience">Experience</a>
         </div>
-        <div style="height:28px"></div>
-        <div class="stats">
-          <div class="stat"><b>21<i>+</i></b><span>Years of<br>experience</span></div>
-          <div class="stat"><b>2018<i>—</i></b><span>At State Street<br>Systems Consultant / VP</span></div>
-          <div class="stat wide"><b>$10,000</b><span>Microsoft security bounty — for discovering an important-severity vulnerability</span></div>
-        </div>
       </div>
 
       <aside class="hero-card">
@@ -215,6 +210,11 @@
         </div>
       </aside>
     </div>
+    <div class="stats">
+      <div class="stat"><b>21<i>+</i></b><span>Years of experience</span></div>
+      <div class="stat"><b>2018<i>—</i></b><span>At State Street — Systems Consultant / VP</span></div>
+      <div class="stat"><b>$10,000</b><span>Microsoft security bounty — for discovering an important-severity vulnerability</span></div>
+    </div>
   </div>
 
   <div class="strip" aria-hidden="true"><div class="strip-inner" id="stripInner">
@@ -225,7 +225,7 @@
   <!-- WORK -->
   <section id="work" class="soft">
     <div class="wrap">
-      <div class="sec-head reveal"><div><div class="kicker">Selected Work</div><h2>Recent<br>work.</h2></div></div>
+      <div class="sec-head reveal"><div><div class="kicker">Selected Work</div><h2>Recent work.</h2></div></div>
       <div class="work-grid">
         <article class="work-card reveal"><div class="work-top"><span class="work-num">01</span><span class="tag ai">AI</span></div><h3>AI Work</h3><p>AI-powered workflows for infrastructure management across multiple applications — built with Azure AI services, including Azure OpenAI and Microsoft Foundry, and automation using LangChain and LangGraph.</p><div class="stack"><span>Azure AI Services</span><span>Azure OpenAI</span><span>Microsoft Foundry</span><span>LangChain</span><span>LangGraph</span><span>Generative AI</span></div></article>
         <article class="work-card reveal"><div class="work-top"><span class="work-num">02</span><span class="tag">Azure</span></div><h3>Azure Infrastructure at State Street</h3><p>Leading Azure infrastructure at State Street — managing multiple Azure services, including Kubernetes, Databricks, Snowflake, Azure OpenAI and Microsoft Foundry, for banking platforms.</p><div class="stack"><span>Azure</span><span>Kubernetes</span><span>Databricks</span><span>Snowflake</span><span>Azure OpenAI</span></div></article>
@@ -234,14 +234,13 @@
         <article class="work-card reveal"><div class="work-top"><span class="work-num">05</span><span class="tag">Team</span></div><h3>Training My Team on Cloud &amp; AI Skills</h3><p>Trained my team on Cloud and AI skills, so the work is shared knowledge, not just one person.</p><div class="stack"><span>Cloud</span><span>AI</span><span>Team Training</span></div></article>
       </div>
       <p style="color:var(--muted);font-size:14px;margin:20px 0 0">Earlier work: Calculation Engine and Data Warehouse — older work, not detailed here.</p>
-      </div>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="wrap">
-      <div class="sec-head reveal"><div><div class="kicker">Experience</div><h2>Professional<br>experience.</h2></div></div>
+      <div class="sec-head reveal"><div><div class="kicker">Experience</div><h2>Professional experience.</h2></div></div>
       <div class="exp-list reveal">
         <div class="exp"><div class="exp-date"><strong>Jan 2018 — Present</strong>Austin, TX</div><div><h3>Systems Consultant / VP <span>— State Street Bank &amp; Trust Company</span></h3><ul><li>Azure Cloud Infrastructure Consultant — managing multiple Azure services, including Kubernetes, Databricks, Snowflake, Azure OpenAI and Microsoft Foundry. Focused on Azure cloud since 2021.</li><li>Designed the plan for how a large data platform stays running and recovers after a failure, and defined the Databricks platform on Azure. Trained my team on Cloud &amp; AI skills.</li><li>AI engineering: AI-powered workflows for infrastructure management across multiple applications, using Azure AI services, Azure OpenAI and Microsoft Foundry, and automation with LangChain &amp; LangGraph</li></ul></div></div>
         <div class="exp"><div class="exp-date"><strong>Apr 2010 — Jan 2018</strong></div><div><h3>Consulting Manager <span>— Cognizant Technology Solutions</span></h3></div></div>
@@ -255,7 +254,7 @@
   <!-- EXPERTISE -->
   <section id="expertise" class="soft">
     <div class="wrap">
-      <div class="sec-head reveal"><div><div class="kicker">Expertise</div><h2>Skills and<br>expertise.</h2></div></div>
+      <div class="sec-head reveal"><div><div class="kicker">Expertise</div><h2>Skills and expertise.</h2></div></div>
       <div class="skills-grid">
         <div class="skill-col highlight reveal"><h3>AI &amp; Automation</h3><div class="chips"><span>Azure AI Services</span><span>Azure OpenAI</span><span>Microsoft Foundry</span><span>Generative AI</span><span>LangChain</span><span>LangGraph</span><span>AI Infrastructure</span><span>AI Automation</span></div></div>
         <div class="skill-col reveal"><h3>Cloud, Security &amp; Databricks</h3><div class="chips"><span>Microsoft Azure</span><span>Kubernetes</span><span>Terraform</span><span>Terragrunt</span><span>Cloud Architecture</span><span>Networking</span><span>Security</span><span>HA / DR</span><span>Infrastructure as Code</span><span>Azure Migration</span></div></div>
@@ -274,13 +273,13 @@
   <section id="contact">
     <div class="wrap">
       <div class="contact-box reveal">
-        <div><h2>Get in<br>touch.</h2><p>If you are working on Azure, Databricks, or AI, I would be glad to talk.</p></div>
+        <div><h2>Get in touch.</h2><p>If you are working on Azure, Databricks, or AI, I would be glad to talk.</p></div>
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/vivek-nagarajan-92801236/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
           <a href="#top">Austin, TX — 78727 <span>◉</span></a>
         </div>
       </div>
-      <p style="text-align:center;color:var(--muted);font-size:13px;margin:18px 0 0">LinkedIn: Vivek Nagarajan · Austin, TX 78727</p>
+      <p style="text-align:left;color:var(--muted);font-size:13px;margin:18px 0 0">LinkedIn: Vivek Nagarajan · Austin, TX 78727</p>
     </div>
   </section>
 </main>
