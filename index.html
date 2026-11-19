@@ -38,7 +38,7 @@
         margin: 0;
         background: var(--bg);
         color: var(--text);
-        font-family: var(--sans);
+        font-family: var(--mono);
         font-size: 17px;
         line-height: 1.7;
         -webkit-font-smoothing: antialiased;
@@ -113,7 +113,8 @@
         display: flex; align-items: baseline; gap: 12px;
       }
       .kicker .num { color: var(--dim); letter-spacing: 0.05em; }
-      h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--text); }
+      h1 { font-family: var(--serif); font-weight: 400; color: var(--text); }
+      h2, h3 { font-family: var(--mono); font-weight: 400; color: var(--text); }
       h2 {
         font-size: clamp(36px, 5vw, 60px); line-height: 1.08; letter-spacing: -0.03em;
         margin: 0 0 20px; max-width: 16em;
@@ -268,13 +269,13 @@
         width: 100%; background: none; border: 0; cursor: pointer; text-align: left;
         display: flex; align-items: center; gap: 20px;
         padding: 26px 30px; min-height: 76px; color: var(--text);
-        font-family: var(--sans);
+        font-family: var(--mono);
       }
       .case-num {
         font-family: var(--mono); font-size: 13px; color: var(--green); letter-spacing: 0.1em; flex: none;
       }
       .case-title {
-        font-family: var(--serif); font-size: clamp(26px, 3vw, 38px); line-height: 1.25; flex: 1 1 auto;
+        font-family: var(--mono); font-size: clamp(26px, 3vw, 38px); line-height: 1.25; flex: 1 1 auto;
         transition: color 0.2s ease;
       }
       .case-head:hover .case-title { color: var(--hover-blue); }
@@ -366,7 +367,7 @@
       }
       .tech-card:hover { transform: translateY(-3px); border-color: var(--blue); }
       .tech-card h3 {
-        font-family: var(--sans); font-size: 22px; font-weight: 600; letter-spacing: -0.015em;
+        font-family: var(--mono); font-size: 22px; font-weight: 600; letter-spacing: -0.015em;
         margin: 0 0 18px; display: flex; align-items: center; gap: 10px; line-height: 1.3;
       }
       .tech-card h3::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--green); flex: none; }
@@ -414,7 +415,7 @@
         color: var(--green); margin: 0 0 14px;
       }
       .bounty .b-amount {
-        font-family: var(--serif); font-size: clamp(58px, 7vw, 84px); line-height: 1; margin: 0;
+        font-family: var(--mono); font-size: clamp(58px, 7vw, 84px); line-height: 1; margin: 0;
         font-style: normal;
       }
       .bounty .b-desc {
