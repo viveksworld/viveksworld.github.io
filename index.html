@@ -78,14 +78,18 @@
         min-height: 64px; position: relative;
       }
       .brand {
-        font-family: var(--mono); font-weight: 600; font-size: 13.5px;
+        font-family: var(--mono); font-weight: 700; font-size: 13.5px;
         color: var(--text); text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap;
         flex: 1 1 auto; min-width: 0; line-height: 1.5;
+        display: inline-flex; align-items: baseline; gap: 8px;
       }
-      .brand .brand-meta { font-weight: 400; color: var(--muted); }
-      nav.main-nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+      .brand .brand-name { font-weight: 700; font-size: 13.5px; }
+      .brand .brand-meta { font-weight: 400; color: var(--muted); font-size: 11px; letter-spacing: 0.12em; }
+      nav.main-nav { display: flex; flex-wrap: nowrap; gap: 4px 16px; flex: none; }
       nav.main-nav a {
-        color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500;
+        font-family: var(--mono);
+        color: var(--muted); text-decoration: none; font-size: 12.5px; font-weight: 500;
+        letter-spacing: 0.05em; white-space: nowrap;
         padding: 10px 2px; min-height: 40px; display: inline-flex; align-items: center;
         box-shadow: inset 0 -2px 0 transparent;
         transition: color 0.2s ease, box-shadow 0.2s ease;
@@ -495,10 +499,18 @@
       }
 
       /* ---------- Responsive ---------- */
+      @media (max-width: 1080px) and (min-width: 901px) {
+        nav.main-nav { gap: 4px 12px; }
+        nav.main-nav a { font-size: 12px; }
+        .brand .brand-name { font-size: 12.5px; }
+        .brand .brand-meta { font-size: 10px; }
+      }
       @media (max-width: 900px) {
         section { padding: 96px 0; }
         .contact { padding: 96px 0; }
         .brand { font-size: 11.5px; white-space: normal; line-height: 1.5; letter-spacing: 0.12em; }
+        .brand .brand-name { font-size: 11.5px; }
+        .brand .brand-meta { font-size: 9.5px; letter-spacing: 0.1em; }
         .nav-toggle { display: inline-flex; }
         nav.main-nav {
           display: none; position: absolute; top: 100%; left: 0; right: 0;
@@ -507,7 +519,7 @@
           padding: 10px 24px 18px;
         }
         nav.main-nav.open { display: flex; }
-        nav.main-nav a { padding: 12px 2px; font-size: 16px; }
+        nav.main-nav a { padding: 12px 2px; font-size: 13.5px; white-space: normal; }
         .hero { min-height: 0; padding: 56px 0 90px; }
         .hero-grid { grid-template-columns: 1fr; gap: 44px; }
         .hero .kicker { display: none; }
@@ -537,6 +549,8 @@
         body { font-size: 16px; }
         .wrap { padding: 0 18px; }
         .brand { font-size: 10.5px; line-height: 1.5; letter-spacing: 0.1em; }
+        .brand .brand-name { font-size: 10.5px; }
+        .brand .brand-meta { font-size: 8.5px; letter-spacing: 0.08em; }
         .nav-inner { padding: 0 18px; gap: 12px; }
         nav.main-nav { padding-left: 18px; padding-right: 18px; }
         .footer-inner { padding: 26px 18px; }
@@ -576,7 +590,7 @@
     <div id="progress" aria-hidden="true"></div>
     <header class="site-nav" id="siteNav">
       <div class="nav-inner">
-        <a class="brand" href="#top">Vivek Nagarajan <span class="brand-meta">/ Engineering Leader / Austin, Texas</span></a>
+        <a class="brand" href="#top"><span class="brand-name">Vivek Nagarajan</span><span class="brand-meta">/ Engineering Leader / Austin, Texas</span></a>
         <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">
           <svg width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="#60a5fa" stroke-width="1.4" aria-hidden="true">
             <line x1="1" y1="2" x2="21" y2="2" /><line x1="1" y1="8" x2="21" y2="8" /><line x1="1" y1="14" x2="21" y2="14" />
@@ -589,7 +603,7 @@
           <a href="#journey">Journey</a>
           <a href="#technical">Technical</a>
           <a href="#recognition">Recognition</a>
-          <a href="#contact">Contact</a>
+          <a href="#contact">Connect</a>
         </nav>
       </div>
     </header>
@@ -604,7 +618,6 @@
           <div class="hero">
             <div class="hero-grid">
               <div>
-                <p class="kicker"><b>Vivek Nagarajan</b><span>· Vice President, State Street · Texas</span></p>
                 <h1>I build <span class="grad">technology platforms</span> that help engineering organizations move faster.</h1>
                 <p class="domains"><span class="key">AI</span> / <span class="key">Cloud</span> / <span class="key">Data Platforms</span> / <span class="key">Architecture</span> / <span class="key">Resiliency</span></p>
                 <p class="subline">Senior engineering leader with 21+ years in technology — from writing backend systems to leading enterprise cloud and AI platforms. Leadership, with the hands-on depth still intact.</p>
