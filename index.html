@@ -78,12 +78,12 @@
         min-height: 64px; position: relative;
       }
       .brand {
-        font-family: var(--sans); font-weight: 700; font-size: 19px;
-        color: var(--text); text-decoration: none; letter-spacing: -0.01em; white-space: nowrap;
-        flex: 1 1 auto; min-width: 0;
+        font-family: var(--mono); font-weight: 600; font-size: 13.5px;
+        color: var(--text); text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap;
+        flex: 1 1 auto; min-width: 0; line-height: 1.5;
       }
-      .brand .brand-meta { font-weight: 500; color: var(--muted); }
-      nav.main-nav { display: flex; flex-wrap: wrap; gap: 4px 26px; }
+      .brand .brand-meta { font-weight: 400; color: var(--muted); }
+      nav.main-nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
       nav.main-nav a {
         color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500;
         padding: 10px 2px; min-height: 40px; display: inline-flex; align-items: center;
@@ -192,6 +192,7 @@
         background: var(--card);
         border: 1px solid var(--line-strong);
         box-shadow: 0 24px 70px -18px rgba(96, 165, 250, 0.35);
+        transition: box-shadow 0.5s ease, border-color 0.5s ease;
       }
       .portrait-photo {
         width: 100%; height: 100%; display: block; object-fit: cover; border-radius: 50%;
@@ -199,10 +200,36 @@
       .portrait-ring::before {
         content: ""; position: absolute; inset: -14px; border-radius: 50%;
         border: 1px solid rgba(52, 211, 153, 0.35); pointer-events: none;
+        transition: border-color 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
       }
       .portrait-ring::after {
         content: ""; position: absolute; inset: -30px; border-radius: 50%;
         border: 1px solid rgba(96, 165, 250, 0.14); pointer-events: none;
+        transition: border-color 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+      }
+      /* On hover, the two rings take on the same blue–green blend used on the
+         headline phrases and breathe gently in and out — a simple pulse that
+         just says "you're hovering here". The photo itself is untouched. */
+      .portrait:hover .portrait-ring::before,
+      .portrait:focus-within .portrait-ring::before {
+        border-color: transparent;
+        background: conic-gradient(from 210deg, var(--light-blue) 0%, var(--green) 38%, var(--blue) 72%, var(--light-blue) 100%);
+        -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2px));
+        mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2px));
+        animation: ring-breathe 2.6s ease-in-out infinite;
+      }
+      .portrait:hover .portrait-ring::after,
+      .portrait:focus-within .portrait-ring::after {
+        border-color: transparent;
+        background: conic-gradient(from 30deg, rgba(96, 165, 250, 0.6) 0%, rgba(52, 211, 153, 0.6) 40%, rgba(156, 203, 255, 0.6) 74%, rgba(96, 165, 250, 0.6) 100%);
+        -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2px));
+        mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2px));
+        animation: ring-breathe 2.6s ease-in-out infinite;
+        animation-delay: 0.4s;
+      }
+      @keyframes ring-breathe {
+        0%, 100% { opacity: 0.5; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.015); }
       }
       .portrait-cap {
         text-align: center; margin-top: 46px;
@@ -336,14 +363,18 @@
       }
       .stage .dot {
         position: absolute; left: 0; top: 40px; width: 19px; height: 19px; border-radius: 50%;
-        background: var(--bg); border: 2px solid var(--dim);
-        transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        background: rgba(156, 203, 255, 0.22); border: 2px solid var(--light-blue);
+        box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.10);
+        transition: background-color 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
       }
-      section.band .stage .dot { background: var(--band); }
-      .stage .dot.inview {
+      section.band .stage .dot { background: rgba(156, 203, 255, 0.22); }
+      /* Reached by the progress line: turns green and glows */
+      .stage .dot.reached {
         background: var(--green); border-color: var(--green);
-        box-shadow: 0 0 0 7px rgba(52, 211, 153, 0.16);
+        box-shadow: 0 0 0 7px rgba(52, 211, 153, 0.16), 0 0 20px 5px rgba(52, 211, 153, 0.55);
       }
+      /* The Next stage circle behaves like every other circle: it starts light
+         blue and turns green with the same glow once the line reaches it. */
       .stage .years {
         font-family: var(--mono); font-size: 14.5px; color: var(--dim);
         padding-left: 52px; padding-top: 8px; letter-spacing: 0.04em; white-space: nowrap;
@@ -354,8 +385,8 @@
       .stage .org { color: var(--blue); font-size: 16px; margin: 0 0 8px; }
       .stage .desc { color: var(--muted); margin: 0; max-width: 36em; }
 
-      /* ---------- Still technical ---------- */
-      .tech-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 26px; }
+      /* ---------- Technical ---------- */
+      .tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 26px; }
       .tech-card {
         background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 28px 26px;
         transition: transform 0.25s ease, border-color 0.25s ease;
@@ -467,7 +498,7 @@
       @media (max-width: 900px) {
         section { padding: 96px 0; }
         .contact { padding: 96px 0; }
-        .brand { font-size: 15px; white-space: normal; line-height: 1.3; }
+        .brand { font-size: 11.5px; white-space: normal; line-height: 1.5; letter-spacing: 0.12em; }
         .nav-toggle { display: inline-flex; }
         nav.main-nav {
           display: none; position: absolute; top: 100%; left: 0; right: 0;
@@ -484,10 +515,9 @@
         .portrait-ring { width: 120px; height: 120px; }
         .portrait-ring::after { display: none; }
         .portrait-cap { margin-top: 26px; text-align: center; width: 100%; }
-        .portrait-cap b, .portrait-cap br { display: none; }
         .scroll-cue { display: none; }
         .pillars { grid-template-columns: 1fr; }
-        .tech-grid { grid-template-columns: repeat(2, 1fr); }
+        .tech-grid { grid-template-columns: 1fr; }
         .bounty { flex-direction: column; align-items: flex-start; }
         .bounty .b-main { padding-right: 0; }
         .bounty .b-desc {
@@ -506,14 +536,17 @@
       @media (max-width: 560px) {
         body { font-size: 16px; }
         .wrap { padding: 0 18px; }
-        .brand { font-size: 13.5px; line-height: 1.35; }
+        .brand { font-size: 10.5px; line-height: 1.5; letter-spacing: 0.1em; }
         .nav-inner { padding: 0 18px; gap: 12px; }
         nav.main-nav { padding-left: 18px; padding-right: 18px; }
         .footer-inner { padding: 26px 18px; }
         .stage { grid-template-columns: 1fr; gap: 4px; padding-left: 52px; }
         .stage .years { padding-left: 0; }
         .stage .dot { top: 38px; }
-        .tech-grid { grid-template-columns: 1fr; }
+        .tech-grid { grid-template-columns: 1fr; gap: 14px; }
+        .tech-card { padding: 22px 18px; }
+        .tech-card h3 { font-size: 19px; }
+        .chip { white-space: normal; }
         .case-head { flex-wrap: wrap; gap: 10px 16px; padding: 22px; }
         .case-tags { order: 3; width: 100%; padding-left: 36px; }
         .case-icon { margin-left: auto; }
@@ -550,11 +583,12 @@
           </svg>
         </button>
         <nav class="main-nav" id="mainNav" aria-label="Sections">
-          <a href="#work">Work</a>
+          <a href="#work">What I Do</a>
           <a href="#impact">Impact</a>
           <a href="#think">How I Think</a>
           <a href="#journey">Journey</a>
           <a href="#technical">Technical</a>
+          <a href="#recognition">Recognition</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -627,17 +661,17 @@
         </div>
       </section>
 
-      <!-- ============ 02 SELECTED IMPACT ============ -->
+      <!-- ============ 02 IMPACT ============ -->
       <section id="impact" style="padding-top:0;">
         <div class="wrap">
-          <p class="kicker reveal"><span class="num">02</span> Selected impact</p>
+          <p class="kicker reveal"><span class="num">02</span> Impact</p>
           <h2 class="reveal">Problems, what I led, and what changed.</h2>
           <p class="section-lede reveal">Four pieces of work that describe the current role better than a job description does. Described generically — the details belong to the organizations that own them.</p>
 
           <div class="case reveal">
             <button class="case-head" type="button" aria-expanded="true" aria-controls="case-1" id="case-1-btn">
               <span class="case-num">01</span>
-              <span class="case-title">AI-powered infrastructure operations</span>
+              <span class="case-title">AI-Powered Infrastructure Operations</span>
               <span class="case-tags">AI · Automation</span>
               <span class="case-icon" aria-hidden="true">+</span>
             </button>
@@ -665,7 +699,7 @@
           <div class="case reveal">
             <button class="case-head" type="button" aria-expanded="false" aria-controls="case-2" id="case-2-btn">
               <span class="case-num">02</span>
-              <span class="case-title">Enterprise cloud resiliency</span>
+              <span class="case-title">Enterprise Cloud Resiliency</span>
               <span class="case-tags">HA · DR</span>
               <span class="case-icon" aria-hidden="true">+</span>
             </button>
@@ -693,7 +727,7 @@
           <div class="case reveal">
             <button class="case-head" type="button" aria-expanded="false" aria-controls="case-3" id="case-3-btn">
               <span class="case-num">03</span>
-              <span class="case-title">Data platform engineering</span>
+              <span class="case-title">Self-Service Data Platforms at Scale</span>
               <span class="case-tags">Databricks · Snowflake</span>
               <span class="case-icon" aria-hidden="true">+</span>
             </button>
@@ -721,7 +755,7 @@
           <div class="case reveal">
             <button class="case-head" type="button" aria-expanded="false" aria-controls="case-4" id="case-4-btn">
               <span class="case-num">04</span>
-              <span class="case-title">Enterprise AI enablement</span>
+              <span class="case-title">Engineering Teams That Keep Getting Better</span>
               <span class="case-tags">AI Platform · Governance</span>
               <span class="case-icon" aria-hidden="true">+</span>
             </button>
@@ -790,7 +824,7 @@
               <span class="dot" aria-hidden="true"></span>
               <div class="years">2005 — 2007</div>
               <div>
-                <h3>Software engineering foundations</h3>
+                <h3>Software Engineering Foundations</h3>
                 <p class="org">Tata Consultancy Services · Assistant Systems Engineer</p>
                 <p class="desc">Enterprise application and backend engineering.</p>
               </div>
@@ -799,7 +833,7 @@
               <span class="dot" aria-hidden="true"></span>
               <div class="years">2007 — 2010</div>
               <div>
-                <h3>Backend &amp; data systems</h3>
+                <h3>Backend &amp; Data Systems</h3>
                 <p class="org">Mahindra Satyam · Software Engineer</p>
                 <p class="desc">Database-driven backend systems and global delivery.</p>
               </div>
@@ -808,7 +842,7 @@
               <span class="dot" aria-hidden="true"></span>
               <div class="years">2010 — 2018</div>
               <div>
-                <h3>Consulting &amp; leadership</h3>
+                <h3>Consulting &amp; Leadership</h3>
                 <p class="org">Cognizant · Consulting Manager</p>
                 <p class="desc">Technology consulting, delivery ownership, and leading teams.</p>
               </div>
@@ -817,16 +851,16 @@
               <span class="dot" aria-hidden="true"></span>
               <div class="years">2018 — Present</div>
               <div>
-                <h3>Cloud, platforms &amp; AI</h3>
+                <h3>AI, Cloud and Data Platforms</h3>
                 <p class="org">State Street · Systems Consultant, Vice President</p>
                 <p class="desc">Azure cloud infrastructure, security, data platforms, resiliency, AI infrastructure, and intelligent automation.</p>
               </div>
             </div>
             <div class="stage reveal">
-              <span class="dot" aria-hidden="true"></span>
+              <span class="dot next-dot" aria-hidden="true"></span>
               <div class="years next">Next</div>
               <div>
-                <h3 class="next-title">Enterprise-scale cloud &amp; AI platform leadership</h3>
+                <h3 class="next-title">Enterprise-scale Cloud &amp; AI Platform Leadership</h3>
                 <p class="desc">Building the platforms and the organizations that change how infrastructure is delivered and operated.</p>
               </div>
             </div>
@@ -834,12 +868,19 @@
         </div>
       </section>
 
-      <!-- ============ 05 STILL TECHNICAL ============ -->
+      <!-- ============ 05 TECHNICAL ============ -->
       <section id="technical" class="band">
         <div class="wrap">
-          <p class="kicker reveal"><span class="num">05</span> Still technical</p>
+          <p class="kicker reveal"><span class="num">05</span> Technical</p>
           <h2 class="reveal">I still read JSON.</h2>
           <p class="section-lede reveal">Leadership hasn't replaced hands-on depth. I can discuss strategy in the morning and debug Kubernetes networking in the afternoon.</p>
+          <div class="terminal reveal" style="margin-bottom:26px;" aria-label="Terminal motif">
+            <pre><span class="prompt">vivek@platform ~ $</span> <span class="cmd">whoami --role</span>
+<span class="comment"># engineering leader · platform builder · still hands-on</span>
+<span class="prompt">vivek@platform ~ $</span> <span class="cmd">git log --oneline career</span>
+<span class="out">a1f… engineering → backend systems → consulting → data platforms → cloud and AI</span>
+<span class="prompt">vivek@platform ~ $</span><span class="cursor" aria-hidden="true"></span></pre>
+          </div>
           <div class="tech-grid">
             <article class="tech-card reveal">
               <h3>AI &amp; Automation</h3>
@@ -921,13 +962,6 @@
                 <span class="chip">Databricks Genie</span>
               </div>
             </article>
-          </div>
-          <div class="terminal reveal" aria-label="Terminal motif">
-            <pre><span class="prompt">vivek@platform ~ $</span> <span class="cmd">whoami --role</span>
-<span class="comment"># engineering leader · platform builder · still hands-on</span>
-<span class="prompt">vivek@platform ~ $</span> <span class="cmd">git log --oneline career</span>
-<span class="out">a1f… backend → data → consulting → cloud → platforms → ai</span>
-<span class="prompt">vivek@platform ~ $</span><span class="cursor" aria-hidden="true"></span></pre>
           </div>
         </div>
       </section>
@@ -1021,6 +1055,7 @@
         var header = document.getElementById("siteNav");
         var timeline = document.getElementById("timeline");
         var tlProgress = document.getElementById("timelineProgress");
+        var stageDots = timeline ? timeline.querySelectorAll(".stage .dot") : [];
         var ticking = false;
         function onScroll() {
           var doc = document.documentElement;
@@ -1034,6 +1069,13 @@
             var total = rect.height - 24;
             var done = Math.min(Math.max(viewMark - rect.top - 12, 0), total);
             tlProgress.style.height = done + "px";
+            /* A circle turns green and glows once the progress line's tip reaches its centre */
+            var lineTipY = rect.top + 12 + done;
+            stageDots.forEach(function (d) {
+              var dRect = d.getBoundingClientRect();
+              var centreY = dRect.top + dRect.height / 2;
+              d.classList.toggle("reached", lineTipY >= centreY);
+            });
           }
           ticking = false;
         }
@@ -1066,20 +1108,10 @@
           revealEls.forEach(function (el) { revealObs.observe(el); });
         }
 
-        /* Timeline markers fill green when they scroll into view */
-        var dots = document.querySelectorAll(".stage .dot");
-        if (reduceMotion || !("IntersectionObserver" in window)) {
-          dots.forEach(function (d) { d.classList.add("inview"); });
-        } else {
-          var dotObs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("inview");
-                dotObs.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.6 });
-          dots.forEach(function (d) { dotObs.observe(d); });
+        /* Reduced motion: no scroll-driven line, so show every stage —
+           including Next — as reached (green and glowing). */
+        if (reduceMotion) {
+          stageDots.forEach(function (d) { d.classList.add("reached"); });
         }
 
         /* Scrollspy: green underline on the current section's nav link */
